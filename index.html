@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AnimeVerse | Created by Mr. Saito</title>
+
+    <meta name="description" content="Welcome to AnimeVerse, your personal anime world. Discover anime, explore genres, find movies and build your anime collection.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND DECORATION -->
+    <div class="background-decoration" aria-hidden="true">
+        <div class="sakura sakura-one">✿</div>
+        <div class="sakura sakura-two">🌸</div>
+        <div class="sakura sakura-three">✿</div>
+        <div class="sakura sakura-four">🌸</div>
+    </div>
+
+    <!-- NOTIFICATION -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <!-- =========================================
+         PROFILE SCREEN
+    ========================================== -->
+    <section id="profile-screen" class="screen profile-screen">
+
+        <div class="profile-card">
+
+            <div class="profile-logo">
+                <span class="logo-symbol">桜</span>
+                <span class="logo-text">Anime<span>Verse</span></span>
+            </div>
+
+            <div class="profile-decoration">✦ ✧ ✦</div>
+
+            <p class="eyebrow">YOUR PERSONAL ANIME UNIVERSE</p>
+
+            <h1>Welcome, <span>Anime Lover!</span></h1>
+
+            <p class="profile-description">
+                Every anime has a story. Every story has a feeling.
+                Let's create your own little anime world.
+            </p>
+
+            <form id="profile-form">
+
+                <div class="form-group">
+                    <label for="name">What should we call you?</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        maxlength="40"
+                        autocomplete="given-name"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="age">Your age</label>
+                        <input
+                            type="number"
+                            id="age"
+                            name="age"
+                            placeholder="Age"
+                            min="5"
+                            max="120"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Choose</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="favorite">Favourite anime</label>
+                    <input
+                        type="text"
+                        id="favorite"
+                        name="favorite"
+                        placeholder="e.g. Naruto, One Piece..."
+                        maxlength="80"
+                    >
+                </div>
+
+                <button type="submit" class="primary-btn" id="start-btn">
+                    Enter AnimeVerse <span>➜</span>
+                </button>
+
+            </form>
+
+            <p class="privacy-note">
+                ✨ Your profile is saved in this browser.
+            </p>
+
+            <p class="creator-credit">
+                Crafted with love by <strong>Mr. Saito</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         MAIN HOME SCREEN
+    ========================================== -->
+    <section id="home-screen" class="screen home-screen hidden">
+
+        <!-- NAVIGATION -->
+        <header class="navbar">
+
+            <a href="#" class="brand" id="home-logo">
+                <span class="brand-icon">桜</span>
+                <span>Anime<span class="brand-highlight">Verse</span></span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <button type="button" class="nav-link active" id="nav-home">
+                    Home
+                </button>
+
+                <button type="button" class="nav-link" id="nav-anime">
+                    Anime
+                </button>
+
+                <button type="button" class="nav-link" id="nav-movies">
+                    Movies
+                </button>
+
+                <button type="button" class="nav-link" id="nav-about">
+                    About
+                </button>
+            </nav>
+
+            <div class="nav-actions">
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="profile-btn"
+                    aria-label="Open profile"
+                    title="My Profile"
+                >
+                    ♙
+                </button>
+
+                <button
+                    type="button"
+                    class="menu-btn"
+                    id="menu-btn"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- HERO / INTRO -->
+        <main id="home-content">
+
+            <section class="hero-section" id="hero">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span class="online-dot"></span>
+                        WELCOME TO YOUR ANIME WORLD
+                    </div>
+
+                    <p class="hero-greeting" id="hero-greeting">
+                        Konnichiwa, Anime Lover!
+                    </p>
+
+                    <h1>
+                        Enter a World of
+                        <span class="gradient-text">Anime Magic</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Discover unforgettable adventures, legendary heroes,
+                        beautiful stories and amazing anime worlds.
+                        Your next favourite anime is waiting for you.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button
+                            type="button"
+                            class="primary-btn"
+                            id="explore-btn"
+                        >
+                            Explore Anime <span>➜</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            id="random-anime-btn"
+                        >
+                            🎲 Surprise Me
+                        </button>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div class="stat-item">
+                            <strong>100+</strong>
+                            <span>Anime to discover</span>
+                        </div>
+
+                        <div class="stat-divider"></div>
+
+                        <div class="stat-item">
+                            <strong>∞</strong>
+                            <span>Stories to explore</span>
+                        </div>
+
+                        <div class="stat-divider"></div>
+
+                        <div class="stat-item">
+                            <strong>♡</strong>
+                            <span>Made for fans</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Poster is supplied dynamically by JavaScript -->
+                <div class="hero-visual" id="heroCharacterPoster">
+
+                    <div class="hero-glow"></div>
+
+                    <div class="hero-poster-placeholder">
+                        <span class="hero-star">✦</span>
+                        <span class="hero-kanji">夢</span>
+                        <p>Your Anime Adventure</p>
+                        <span class="hero-star">✧</span>
+                    </div>
+
+                    <div class="floating-label label-top">
+                        ✨ Your next obsession
+                    </div>
+
+                    <div class="floating-label label-bottom">
+                        🌸 Find your story
+                    </div>
+
+                </div>
+
+                <div class="hero-bottom-decoration" aria-hidden="true">
+                    ✧ ────── ✿ ────── ✧
+                </div>
+
+            </section>
+
+
+            <!-- CREATOR INTRO -->
+            <section class="creator-section section-container" id="about">
+
+                <div class="creator-card">
+
+                    <div class="creator-symbol" aria-hidden="true">
+                        <span>斎</span>
+                        <span class="creator-sparkle">✦</span>
+                    </div>
+
+                    <div class="creator-content">
+
+                        <p class="eyebrow">A LITTLE NOTE FROM THE CREATOR</p>
+
+                        <h2>This Anime World Is <span>Created by Mr. Saito</span></h2>
+
+                        <p>
+                            Welcome to AnimeVerse — a place created for people
+                            who love anime, unforgettable characters, powerful
+                            friendships and stories that stay in the heart.
+                        </p>
+
+                        <p>
+                            Explore different genres, discover new adventures,
+                            revisit your favourites and find something special
+                            to watch next. This is your space to enjoy the magic
+                            of anime, one story at a time.
+                        </p>
+
+                        <p class="creator-signature">
+                            Stay curious. Stay peaceful. Keep exploring.
+                            <strong> — Mr. Saito ♡</strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SEARCH AND ANIME LIBRARY -->
+            <section class="anime-section section-container" id="anime-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="eyebrow">FIND YOUR NEXT ADVENTURE</p>
+                        <h2>Explore <span>Anime</span></h2>
+                        <p class="section-description">
+                            From peaceful slice-of-life stories to epic adventures.
+                        </p>
+                    </div>
+
+                    <div class="anime-count-box">
+                        <span id="anime-count">Loading...</span>
+                        <small>Anime discovered</small>
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH -->
+                <div class="search-container">
+
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+
+                    <input
+                        type="search"
+                        id="search"
+                        placeholder="Search anime by title..."
+                        autocomplete="off"
+                        aria-label="Search anime by title"
+                    >
+
+                    <button
+                        type="button"
+                        id="clear-search"
+                        class="clear-search-btn"
+                        aria-label="Clear search"
+                        title="Clear search"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <!-- CATEGORY FILTERS -->
+                <div class="category-area">
+
+                    <p class="category-label">Choose your vibe</p>
+
+                    <div class="category-list" id="category-list">
+
+                        <button
+                            type="button"
+                            class="category-btn active"
+                            data-category="All"
+                        >
+                            ✨ All Anime
+                        </button>
+
+                        <button
+                            type="button"
+                            class="category-btn"
+                            data-category="Action"
+                        >
+                            ⚔️ Action
+                        </button>
+
+                        <button
+                            type="button"
+                            class="category-btn"
+                            data-category="Adventure"
+                        >
+                            🗺️ Adventure
+                        </button>
+
+                        <button
+                            type="button"
+                            class="category-btn"
+                            data-category="Romance"
+                        >
+                            💗 Romance
+                        </button>
+
+                        <button
+                            type="button"
+                            class="category-btn"
+                            data-category="Comedy"
+                        >
+                            ☀️ Comedy
+                        </button>
+
+                        <button
+                            type="button"
+                            class="category-btn"
+                            data-category="Fantasy"
+                        >
+                            🪄 Fantasy
+                        </button>
+
+                        <button
+                            type="button"
+                            class="category-btn"
+                            data-category="Drama"
+                        >
+                            🎭 Drama
+                        </button>
+
+                        <button
+                            type="button"
+                            class="category-btn"
+                            data-category="Horror"
+                        >
+                            🌙 Horror
+                        </button>
+
+                        <button
+                            type="button"
+                            class="category-btn"
+                            data-category="Slice of Life"
+                        >
+                            🌸 Slice of Life
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STATUS MESSAGE -->
+                <div id="loading-message" class="status-message">
+                    <div class="loading-spinner"></div>
+                    <p>Opening the gates to the anime universe...</p>
+                </div>
+
+                <div
+                    id="error-message"
+                    class="status-message error-message hidden"
+                    role="alert"
+                >
+                    <span class="status-icon">☁</span>
+                    <h3>Unable to load anime right now</h3>
+                    <p>
+                        Please check your internet connection and try again.
+                    </p>
+                    <button
+                        type="button"
+                        id="retry-btn"
+                        class="secondary-btn"
+                    >
+                        Try Again
+                    </button>
+                </div>
+
+                <div
+                    id="empty-message"
+                    class="status-message hidden"
+                >
+                    <span class="status-icon">🌸</span>
+                    <h3>No anime found</h3>
+                    <p>Try another title or choose a different category.</p>
+                    <button
+                        type="button"
+                        id="reset-filters-btn"
+                        class="secondary-btn"
+                    >
+                        Reset Filters
+                    </button>
+                </div>
+
+
+                <!-- ANIME CARDS ARE INSERTED HERE BY JAVASCRIPT -->
+                <div
+                    id="anime-grid"
+                    class="anime-grid"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- LOAD MORE -->
+                <div class="load-more-container">
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="load-more-btn"
+                    >
+                        Load More Anime <span>↓</span>
+                    </button>
+
+                    <p class="load-more-note">
+                        More stories, more adventures, more memories.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- FEATURED QUOTE -->
+            <section class="quote-section">
+
+                <div class="quote-card">
+                    <span class="quote-decoration">“</span>
+
+                    <p>
+                        Every journey begins with a single step.
+                        Every great story begins with a dream.
+                    </p>
+
+                    <span class="quote-author">— AnimeVerse · Mr. Saito</span>
+                </div>
+
+            </section>
+
+
+            <!-- MOVIE SECTION -->
+            <section class="movie-section section-container" id="movies-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="eyebrow">CINEMATIC ANIME EXPERIENCES</p>
+                        <h2>Anime <span>Movies</span></h2>
+                        <p class="section-description">
+                            Discover anime films filled with beautiful
+                            animation and memorable stories.
+                        </p>
+                    </div>
+
+                    <span class="movie-decoration" aria-hidden="true">🎬</span>
+
+                </div>
+
+                <!-- MOVIE CARDS ARE INSERTED HERE BY JAVASCRIPT -->
+                <div
+                    id="movie-grid"
+                    class="movie-grid"
+                    aria-live="polite"
+                ></div>
+
+                <p class="movie-note">
+                    Movie information and posters require an internet connection.
+                </p>
+
+            </section>
+
+
+            <!-- ABOUT / WEBSITE INFO -->
+            <section class="about-section section-container" id="website-about">
+
+                <div class="about-heading">
+                    <p class="eyebrow">THE HEART OF ANIMEVERSE</p>
+                    <h2>More Than Just <span>Anime</span></h2>
+                </div>
+
+                <div class="about-grid">
+
+                    <article class="about-card">
+                        <div class="about-icon">🌸</div>
+                        <h3>Discover</h3>
+                        <p>
+                            Explore different anime genres and find
+                            stories that match your mood.
+                        </p>
+                    </article>
+
+                    <article class="about-card">
+                        <div class="about-icon">🔎</div>
+                        <h3>Explore</h3>
+                        <p>
+                            Search anime titles, view ratings and learn
+                            more about the shows you love.
+                        </p>
+                    </article>
+
+                    <article class="about-card">
+                        <div class="about-icon">💫</div>
+                        <h3>Enjoy</h3>
+                        <p>
+                            Build your own anime experience and discover
+                            another world with every story.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <a href="#" class="footer-brand" id="footer-home">
+                🌸 AnimeVerse
+            </a>
+
+            <p>
+                A little universe for every anime lover.
+            </p>
+
+            <div class="footer-divider"></div>
+
+            <p class="footer-credit">
+                Designed with care by <strong>Mr. Saito</strong>
+            </p>
+
+            <p class="footer-copyright">
+                © <span id="current-year">2026</span> AnimeVerse.
+                Anime information and images belong to their respective owners.
+            </p>
+
+            <button
+                type="button"
+                id="back-to-top"
+                class="back-to-top"
+            >
+                ↑ Back to top
+            </button>
+
+        </footer>
+
+    </section>
+
+
+    <!-- =========================================
+         ANIME DETAIL SCREEN
+    ========================================== -->
+    <section id="detail-screen" class="screen detail-screen hidden">
+
+        <header class="detail-navbar">
+
+            <button
+                type="button"
+                id="back-btn"
+                class="secondary-btn back-btn"
+            >
+                ← Back to AnimeVerse
+            </button>
+
+            <a href="#" class="brand" id="detail-home-logo">
+                <span class="brand-icon">桜</span>
+                <span>Anime<span class="brand-highlight">Verse</span></span>
+            </a>
+
+        </header>
+
+        <main class="detail-main">
+
+            <div id="detail-content" class="detail-content">
+
+                <!-- Selected anime details are inserted by JavaScript -->
+
+            </div>
+
+        </main>
+
+        <footer class="footer detail-footer">
+            <p>Created with ♡ by <strong>Mr. Saito</strong></p>
+        </footer>
+
+    </section>
+
+
+    <!-- =========================================
+         PROFILE VIEW / EDIT MODAL
+    ========================================== -->
+    <div
+        id="profile-modal"
+        class="modal hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="profile-modal-title"
+    >
+
+        <div class="modal-backdrop" id="profile-backdrop"></div>
+
+        <div class="modal-card">
+
+            <button
+                type="button"
+                id="close-profile-btn"
+                class="modal-close"
+                aria-label="Close profile"
+            >
+                ×
+            </button>
+
+            <div class="modal-heading">
+                <span class="modal-icon">♡</span>
+                <p class="eyebrow">YOUR PERSONAL SPACE</p>
+                <h2 id="profile-modal-title">My <span>Profile</span></h2>
+            </div>
+
+            <form id="edit-profile-form">
+
+                <div class="form-group">
+                    <label for="edit-name">Name</label>
+                    <input
+                        type="text"
+                        id="edit-name"
+                        name="edit-name"
+                        maxlength="40"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="edit-age">Age</label>
+                        <input
+                            type="number"
+                            id="edit-age"
+                            name="edit-age"
+                            min="5"
+                            max="120"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-gender">Gender</label>
+                        <select id="edit-gender" name="edit-gender" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-favorite">Favourite anime</label>
+                    <input
+                        type="text"
+                        id="edit-favorite"
+                        name="edit-favorite"
+                        maxlength="80"
+                    >
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    Save Changes ✓
+                </button>
+
+            </form>
+
+            <button
+                type="button"
+                id="reset-profile-btn"
+                class="text-btn"
+            >
+                Reset Profile
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>
